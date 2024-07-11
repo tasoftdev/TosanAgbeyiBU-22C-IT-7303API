@@ -1,27 +1,24 @@
-The School Schedule API is designed to manage courses, instructors, 
-and students in a school setting. It allows users to perform CRUD operations on courses, 
-instructors, and students, including retrieving all records, retrieving a single record by ID,
-creating new records, updating existing records, and deleting records.
+# School Schedule API
 
-## Entities
-- **Course**
-  - Id: int
-  - Name: string
-  - Credits: int
-  - InstructorId: int (foreign key)
-  - Room: string
-  - Schedule: string
+Description
+School Schedule API is an ASP.NET Core application that provides CRUD operations for managing courses and students in a school environment. It uses an in-memory database for simplicity.
 
-- **Instructor**
-  - Id: int
-  - FirstName: string
-  - LastName: string
-  - Email: string
-  - Department: string
+Project Structure
+- **Controllers**: Contains API controllers (`CoursesController.cs`, `StudentsController.cs`) for handling HTTP requests.
+- **Models**: Defines data models (`Course.cs`, `Student.cs`) used in the application.
+- **Data**: Configures `SchoolContext.cs` for database operations and data seeding.
+- **Startup.cs**: Configures services and middleware for the ASP.NET Core application.
 
-- **Student**
-  - Id: int
-  - FirstName: string
-  - LastName: string
-  - Age: int
-  - Email: string
+Dependencies
+- Entity Framework Core: Version X.X.X
+- Microsoft.AspNetCore.Mvc: Version X.X.X
+
+Usage
+API Endpoints
+- **GET** `/api/courses`: Retrieves all courses.
+- **POST** `/api/courses`: Creates a new course.
+- **PUT** `/api/courses/{id}`: Updates an existing course.
+- **DELETE** `/api/courses/{id}`: Deletes a course by ID.
+- Similar endpoints exist for `/api/students`.
+
+
